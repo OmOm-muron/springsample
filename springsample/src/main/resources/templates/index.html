@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Diary App - Diary List</title>
+</head>
+<body>
+    <h1>Diary List</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Date Time</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="diary : ${diaries}">
+            <td th:text="${diary.id}"></td>
+            <td th:text="${diary.title}"></td>
+            <td th:text="${diary.content}"></td>
+            <td th:text="${diary.upddate}"></td>
+            <td>
+                <a th:href="@{/edit/{id}(id=${diary.id})}">Edit</a>
+                <a th:href="@{/delete/{id}(id=${diary.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/create">Add New Diary</a>
+</body>
+</html>

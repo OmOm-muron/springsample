@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Diary App - Create New Diary</title>
+</head>
+<body>
+    <h1>Create New Diary</h1>
+    <form action="/create" method="post" th:object="${diary}">
+        <label>Title:</label><br>
+        <input type="text" th:field="*{title}"><br>
+        <label>Content:</label><br>
+        <textarea th:field="*{content}"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/">Back to Diary List</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Diary App - Edit Diary</title>
+</head>
+<body>
+    <h1>Edit Diary</h1>
+    <form action="/edit" method="post" th:object="${diary}">
+        <input type="hidden" th:field="*{id}">
+        <label>Title:</label><br>
+        <input type="text" th:field="*{title}"><br>
+        <label>Content:</label><br>
+        <textarea th:field="*{content}"></textarea><br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/">Back to Diary List</a>
+</body>
+</html>
